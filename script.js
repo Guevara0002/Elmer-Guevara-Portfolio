@@ -1,4 +1,33 @@
 (() => {
+
+  /* ---- Visor de certificados (lightbox) ---- */
+const lb = document.createElement('div');
+lb.className = 'lightbox';
+lb.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">×</button><img alt="">';
+document.body.appendChild(lb);
+const lbImg = lb.querySelector('img');
+
+const closeLb = () => {
+  lb.classList.remove('open');
+  document.body.style.overflow = '';
+};
+
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a[href]');
+  if (a && /\.(jpe?g|png|webp)$/i.test(a.getAttribute('href'))) {
+    e.preventDefault();
+    lbImg.src = a.href;
+    lbImg.alt = a.closest('article')?.querySelector('h3')?.textContent || 'Certificate';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  } else if (e.target === lb || e.target.closest('.lightbox-close')) {
+    closeLb();
+  }
+});
+addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+
+
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
