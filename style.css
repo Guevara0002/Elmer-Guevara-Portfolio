@@ -701,7 +701,7 @@ ul {
 
 @media (max-width: 800px) {
   .section {
-    padding: 4.5rem var(--side-space);
+    padding: 1.5rem var(--side-space);
     min-height: auto;
   }
 
