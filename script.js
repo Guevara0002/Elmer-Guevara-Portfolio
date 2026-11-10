@@ -1,6 +1,5 @@
 (() => {
 
-  /* ---- Visor de certificados (lightbox) ---- */
 const lb = document.createElement('div');
 lb.className = 'lightbox';
 lb.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">×</button><img alt="">';

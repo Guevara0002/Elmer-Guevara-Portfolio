@@ -596,7 +596,7 @@ ul {
   padding: 1.0rem;
   display: grid;
   gap: 0.8rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .footer-contact .contact-form label {
@@ -708,9 +708,9 @@ ul {
   .lightbox img {
     max-width: none;
     max-height: none;
-    width: 180vw;          /* cambia este valor: 150vw, 200vw... */
+    width: 180vw;     
   }
-  
+
   .section {
     padding: 1.5rem var(--side-space);
     min-height: auto;
@@ -803,9 +803,6 @@ ul {
   align-self: flex-start; 
 }
 
-
-
-
 .lightbox {
   position: fixed;
   inset: 0;
@@ -827,7 +824,7 @@ ul {
   visibility: visible;
 }
 
-/* TAMAÑO de la imagen: cambia estos dos valores */
+
 .lightbox img {
   max-width: 100%;
   max-height: 100%;
