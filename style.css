@@ -258,7 +258,7 @@ ul {
 }
 
 .home h1 {
-  font-size: clamp(2.0rem, 2.0vw, 5.0rem);
+  font-size: clamp(3.0rem, 2.0vw, 5.0rem);
   font-weight: 700;
   line-height: 1.05;
   color: #fff;
