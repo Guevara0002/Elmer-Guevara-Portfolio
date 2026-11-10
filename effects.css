@@ -1,0 +1,236 @@
+/* ---------- 1. TIPOGRAFÍA ---------- */
+:root {
+  --font-head: "Space Grotesk", "Outfit", sans-serif;
+  --font-body: "Outfit", "Segoe UI", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-head); }
+ul { padding: 0; }
+
+.logo { font-family: "Fredoka", sans-serif; }
+.home-headline {
+  margin: 0 0 0.6rem;
+  min-height: 1.6em;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.project-year { font-family: var(--font-mono); font-weight: 400; }
+.tag { font-family: var(--font-mono); font-size: 0.9rem; }
+
+/* ---------- 2. FONDO ANIMADO ---------- */
+.bg-fx {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.bg-fx canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  will-change: transform;
+}
+.blob-1 { width: 42vmax; height: 42vmax; top: -12%; left: -10%; background: #3050ff; opacity: 0.42; animation: drift1 22s ease-in-out infinite alternate; }
+.blob-2 { width: 36vmax; height: 36vmax; bottom: -15%; right: -8%; background: var(--violet); opacity: 0.4; animation: drift2 27s ease-in-out infinite alternate; }
+.blob-3 { width: 26vmax; height: 26vmax; top: 38%; left: 42%; background: var(--pink); opacity: 0.2; animation: drift3 31s ease-in-out infinite alternate; }
+
+@keyframes drift1 { to { transform: translate(32vw, 24vh) scale(1.2); } }
+@keyframes drift2 { to { transform: translate(-30vw, -26vh) scale(1.15); } }
+@keyframes drift3 { to { transform: translate(-26vw, 18vh) scale(0.8); } }
+
+.cursor-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 480px;
+  height: 480px;
+  margin: -240px 0 0 -240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 61, 255, 0.28), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+/* Las secciones dejan ver el fondo animado */
+main, .site-footer { position: relative; z-index: 1; }
+.section-dark { background: radial-gradient(circle at 0% 100%, rgba(48, 80, 255, 0.28), transparent 40%); }
+.section-purple { background: radial-gradient(circle at 100% 0%, rgba(255, 61, 139, 0.3), transparent 40%), rgba(48, 16, 128, 0.78); }
+.site-footer { background: rgba(7, 10, 22, 0.88); }
+
+/* ---------- 3. HEADER ---------- */
+.site-header {
+  background: rgba(11, 16, 32, 0.7);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+.logo { transition: transform 0.3s; }
+.logo:hover { transform: rotate(-6deg) scale(1.12); }
+
+.main-nav a { position: relative; padding: 0.2rem 0; transition: color 0.25s; }
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.main-nav a:hover::after,
+.main-nav a.active::after { transform: scaleX(1); }
+.main-nav a.active { color: #fff; }
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* ---------- 4. TÍTULOS Y HOME ---------- */
+.section-title { position: relative; padding-bottom: 0.9rem; }
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 4.5rem;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--gradient);
+}
+
+/* Nombre con degradado que se desplaza */
+.home h1 {
+  background: linear-gradient(90deg, #fff, #d9c2ff, var(--pink), #d9c2ff, #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 9s linear infinite;
+}
+@keyframes shine { to { background-position: 200% center; } }
+
+/* Cursor de la escritura */
+.typing::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 4px;
+  vertical-align: -0.12em;
+  background: var(--pink);
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* bony flotando con brillo que respira */
+.photo { animation: float 6s ease-in-out infinite, glow 5s ease-in-out infinite; }
+@keyframes float { 50% { transform: translateY(-14px) rotate(-1deg); } }
+@keyframes glow { 50% { box-shadow: 0 0 120px 55px var(--blue-glow); } }
+
+/* ---------- 5. TARJETAS, ETIQUETAS Y BOTONES ---------- */
+.card {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s, box-shadow 0.35s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(139, 61, 255, 0.7);
+  box-shadow: 0 18px 40px -12px rgba(139, 61, 255, 0.45), 0 0 0 1px rgba(255, 61, 139, 0.25);
+}
+.contact-form.card:hover { transform: none; box-shadow: none; }
+
+.tag { transition: transform 0.25s, border-color 0.25s, background 0.25s; }
+.tag:hover { transform: translateY(-3px); border-color: var(--pink); background: rgba(255, 61, 139, 0.14); }
+
+/* Proyectos: zoom suave en la imagen */
+.project-card img { position: relative; z-index: 0; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.project-card:hover img { transform: scale(1.08); }
+.project-body { position: relative; z-index: 1; background: var(--card); }
+
+/* Certificados: brillo que cruza la tarjeta */
+.certificate-card { position: relative; }
+.certificate-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.8s;
+  pointer-events: none;
+}
+.certificate-card:hover::after { left: 130%; }
+
+/* Botones */
+.button {
+  background-size: 200% 100%;
+  transition: transform 0.25s, box-shadow 0.25s, background-position 0.4s, background-color 0.25s;
+}
+.button:hover {
+  transform: translateY(-3px);
+  background-position: 100% 0;
+  box-shadow: 0 10px 24px -6px rgba(255, 61, 139, 0.55);
+  filter: none;
+}
+.button-outline:hover { background-color: rgba(139, 61, 255, 0.22); }
+
+/* Iconos del footer (el de GitHub era gris oscuro sobre fondo oscuro) */
+.footer-column a img { transition: transform 0.3s; }
+.footer-column a:hover img { transform: scale(1.2) rotate(-6deg); }
+.footer-column img[src="git.png"] { filter: invert(1); }
+
+/* ---------- 6. ENTRADA AL HACER SCROLL ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--d, 0s);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- 7. DETALLES ---------- */
+::selection { background: var(--pink); color: #fff; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--violet), var(--pink)); border-radius: 10px; }
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--violet);
+  box-shadow: 0 0 0 4px rgba(139, 61, 255, 0.25);
+}
+:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+
+@media (hover: none) { .cursor-glow { display: none; } }
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elmer Guevara | Digital Portfolio</title>
+  <meta name="description"
+    content="Digital portfolio of Elmer Mauricio Guevara Moreno: skills, projects and certificates from the ¡Supérate! program.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Fredoka:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="effects.css">
+</head>
+
+
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+<div class="bg-fx" aria-hidden="true">
+  <span class="blob blob-1"></span><span class="blob blob-2"></span><span class="blob blob-3"></span>
+  <canvas id="particles"></canvas>
+  <div class="cursor-glow"></div>
+</div>
+
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-header">
+    <a class="logo" href="#home">EG</a>
+
+    <nav class="main-nav" id="main-nav">
+      <a   href="#home">Home</a>
+      <a href="#stack">Tech Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Certificates</a>
+      <a href="#footer">Contact</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+    <span></span><span></span><span></span>
+  </button>
+  </header>
+
+  <main>
+
+    <!-- ===== A. HOME / PROFILE ===== -->
+    <section id="home" class="section section-dark">
+      <div class="home">
+        <div>
+          <p class="home-headline">Aspiring IT Systems Technician</p>
+          <h1>Elmer Mauricio Guevara Moreno</h1>
+          <p class="home-about">
+            I am a high school student and a third-year ¡Supérate! student with skills in programming, design, and English. I enjoy creating digital projects, solving problems, and sharing ideas. My goal is to study Computer Systems and continue growing in software development and computer security
+          </p>
+        </div>
+
+        <img class="photo" src="profile.png" alt="Portrait of Elmer Guevara">
+      </div>
+    </section>
+
+    <!-- ===== B. TECHNOLOGY ===== -->
+    <section id="stack" class="section section-purple">
+      <h2 class="section-title">Technologies</h2>
+      <p class="section-intro">The languages and tools I use. I’m still learning.</p>
+      <div class="stack-grid">
+        <article class="card stack-card">
+          <h3>Programming Languages</h3>
+          <div class="tag-list">
+            <span class="tag">JavaScript (basic)</span>
+            <span class="tag tag-learning">Python (basic)</span>
+            
+          </div>
+        </article>
+        <article class="card stack-card">
+          <h3>Frontend Development</h3>
+          <div class="tag-list">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS (basic)</span>
+            <span class="tag">JavaScript (basic)</span>
+          </div>
+        </article>
+        <article class="card stack-card">
+          <h3>Backend Development</h3>
+          <div class="tag-list">
+            <span class="tag tag-learning">Python (basic)</span>
+            <span class="tag tag-learning">Node.js</span>
+          </div>
+        </article>
+        <article class="card stack-card">
+          <h3>Database Management</h3>
+          <div class="tag-list">
+            <span class="tag tag-learning">MySQL</span>
+            <span class="tag">Microsoft Excel (expert)</span>
+            <span class="tag">Microsoft Lists</span>
+          </div>
+        </article>
+        <article class="card stack-card">
+          <h3>Digital Tools</h3>
+          <div class="tag-list">
+            <span class="tag">Microsoft Excel (expert)</span>
+            <span class="tag">PowerPoint</span>
+            <span class="tag">Canva</span>
+            <span class="tag">Genially</span>
+            <span class="tag">Power BI</span>
+            <span class="tag tag-learning">GitHub</span>
+          </div>
+        </article>
+      </div>
+    </section>
+    
+    <!-- Projects -->
+    <section id="projects" class="section section-dark">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-intro">One project from each year of the ¡Supérate! program.</p>
+      <div class="project-grid">
+
+        <!-- Project 1 -->
+        <article class="card project-card">
+          <img src="project 1.jpg" alt="Preview of project 1" width="300" height="350">
+          <div class="project-body">
+            <p class="project-year">2024</p>
+            <h3>PIP & POP</h3>
+            <p>An interactive website designed to organize karaoke events, allowing participants to register, select their favorite songs, and become part of the event in an organized way, making the experience easier and more enjoyable for everyone</p>
+            <div class="tag-list">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+            <div>
+              <h4>My Role &amp; Contributions</h4>
+              <p>This project was entirely designed and developed by me. I handled the research, visual design, frontend, backend, and implementation of all its features</p>
+            </div>
+            <div class="project-links">
+               <a class="button button-outline" href="https://github.com/Guevara0002/-Karaoke.git" target="_blank"
+                rel="noopener noreferrer">GitHub</a>
+              <a class="button" href="https://third-project-lac.vercel.app" target="_blank" rel="noopener noreferrer">See Project</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card project-card">
+          <img src="project 2.jpg" alt="Preview of project 2" width="300" height="350">
+          <div class="project-body">
+            <p class="project-year">2025</p>
+            <h3>PANDA SCAPE</h3>
+            <p>Panda Scape is an interactive game that challenges players to test their problem-solving skills through different questions and challenges, where every correct answer allows them to advance to the next level while managing three lives, rewarding those who successfully complete the game</p>
+            <div class="tag-list">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div>
+              <h4>My Role &amp; Contributions</h4>
+              <p>I developed the questions and answers, designed and programmed the answer form using HTML, CSS, and JavaScript, and integrated my work into the main project through GitHub in collaboration with my team</p>
+            </div>
+            <div class="project-links">
+              <a class="button button-outline" href="https://github.com/Guevara0002/Panda-game.git" target="_blank"
+                rel="noopener noreferrer">GitHub</a>
+              <a class="button" href="https://second-project-ruby.vercel.app" target="_blank"
+                rel="noopener noreferrer">See Project</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card project-card">
+          <img src="project 3.jpg" alt="Preview of project 3" width="300" height="350">
+          <div class="project-body">
+            <p class="project-year">2026</p>
+            <h3>TECHNOLOGY & SOCIETY</h3>
+            <p>Technology and Society is an informative and interactive website that explores the evolution of technology from ancient times to the present, showing how communication has changed over the years and how these advances have influenced people's lives, while also presenting the development of computers and their improvements throughout history</p>
+            <div class="tag-list">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div>
+              <h4>My Role &amp; Contributions</h4>
+              <p>I was the leader of this project. I helped find the information, choose the design, and develop the website using HTML, CSS, and JavaScript. My teammates also shared their ideas and helped me improve the design throughout the development process</p>
+            </div>
+            <div class="project-links">
+              <a class="button button-outline" href="https://github.com/Guevara0002/Tecnology-and-Society.git" target="_blank"
+                rel="noopener noreferrer">GitHub</a>
+              <a class="button" href="https://tecnology-and-society.vercel.app" target="_blank" rel="noopener noreferrer">See Project</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== D. EDUCATION & CERTIFICATES ===== -->
+    <section id="education" class="section section-purple">
+  <div class="section-head">
+    <h2 class="section-title">Education &amp; Certificates</h2>
+    <a class="more-arrow" href="https://canva.link/k0e25iqt2b08d8e">
+      See more courses <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <p class="section-intro">During my high school and my time at ¡Supérate!, I discovered my interest in technology and earned certificates that helped me learn new skills and prepare for my future career</p>
+      <h3 class="subtitle">COURSES</h3>
+      <div class="certificate-grid">
+        <article class="card certificate-card">
+          <img src="Certificate 1.jpg" alt="Certificate of course 1" width="300" height="310">
+          <div class="certificate-info">
+            <h3>Preventive Cibersecurity</h3>
+            <p>Platform (Platzi) · 2026</p>
+            <a class="button" href="Certificate 1.jpg" target="_blank" rel="noopener noreferrer">View
+              certificate</a>
+          </div>
+        </article>
+        <article class="card certificate-card">
+          <img src="Certificate 2.jpg" alt="Certificate of course 2" width="300" height="310">
+          <div class="certificate-info">
+            <h3>Essential Skills for the Workplace</h3>
+            <p>Platform (Platzi) · 2026</p>
+            <a class="button" href="Certificate 2.jpg" target="_blank" rel="noopener noreferrer">View
+              certificate</a>
+          </div>
+        </article>
+        <article class="card certificate-card">
+          <img src="Certificate 3.jpg" alt="Certificate of course 3" width="300" height="310">
+          <div class="certificate-info">
+            <h3>Introduction to Software Engineering</h3>
+            <p>Platform (Platzi) · 2026</p>
+            <a class="button" href="Certificate 3.jpg" target="_blank" rel="noopener noreferrer">View
+              certificate</a>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="subtitle">Additional certifications</h3>
+      <div class="extra-grid">
+        <article class="card extra-card">
+          <h3>TOEIC Listening &amp; Reading</h3>
+          <p>English certification · 2025</p>
+        </article>
+        <article class="card extra-card">
+          <h3>Microsoft Excel  (Intermediate)</h3>
+          <p>¡Supérate! Hilasal program, Microsoft accredited · 2025</p>
+        </article>
+        <article class="card extra-card">
+          <h3>Microsoft Excel (Expert ) </h3>
+          <p>¡Supérate! Hilasal program, Microsoft accredited · 2026</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== F. FOOTER ===== -->
+<footer  id="footer"   class="site-footer">
+
+    <div class="footer-grid">
+
+        <!-- COLUMN 1: ABOUT -->
+        <div class="footer-about">
+            <h2>Elmer Mauricio Guevara Moreno</h2>
+            <p class="footer-role">Aspiring IT Systems Technician</p>
+
+            <p>
+                Thanks for visiting my portfolio.
+                I'm excited to keep learning, growing
+                and building new things.
+            </p>
+        </div>
+
+        <!-- COLUMN 3: CONNECT -->
+        <div class="footer-column">
+            <h3>Contact</h3>
+
+            <ul>
+                <li>
+                    <a href="https://github.com/dashboard"
+                        style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+                      
+                    <img src="git.png" alt="GitHub" width="25" height="25">GitHub</a>
+                </li>
+
+                <li>
+                    <a href="https://www.linkedin.com/in/elmer-guevara-3bb16830a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                       style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+                      
+                    <img src="Link.png" alt="linkedin" width="25" height="25">
+                    LinkedIn</a>
+                </li>
+
+                <li>
+                    <a href="mailto:guevara.mauricio0002@gmail.com"
+                       style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+                      
+                    <img src="gmail.png" alt="Gmail" width="25" height="25">
+                       
+                      Gmail</a>
+                </li>
+
+                <li>Ciudad Arce, La Libertad, El Salvador</li>
+            </ul>
+        </div>
+
+
+        <!-- COLUMN 4: CONTACT FORM -->
+        <div class="footer-contact">
+        
+
+            <form class="card contact-form" action="mailto:your.email@gmail.com" method="post" enctype="text/plain">
+                <label>Name <input type="text" name="name" required></label>
+                <label>Email <input type="email" name="email" required></label>
+                <label>Message <textarea name="message" rows="2" required></textarea></label>
+                <button class="button" type="submit">Open in my email app</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <p class="copyright">
+        © 2026 Elmer Mauricio Guevara Moreno. All rights reserved.
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+
+</html>
