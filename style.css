@@ -778,8 +778,16 @@ ul {
   border-color: var(--pink);
   background: rgba(139, 61, 255, 0.2);
 }
-
-/* la flecha se desliza a la derecha */
 .more-arrow:hover span {
   transform: translateX(6px);
+}
+
+.extra-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.extra-card .more-arrow {
+  margin-top: auto;     
+  align-self: flex-start; 
 }
